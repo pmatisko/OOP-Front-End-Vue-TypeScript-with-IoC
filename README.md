@@ -21,7 +21,7 @@ TypeScript is a safer and more modern version of JavaScript, so I prefer using i
 However, Vue components should not do too much of business logic, therefore JS is usually satisfactory.
 
 
-## Core principles for proper OOP design
+## Core principles of the proper OOP design
 
 ### Separation of Concerns
 
