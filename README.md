@@ -122,3 +122,6 @@ this.exceptionHandler = app.resolve('ExceptionHandler');
 
 Typically, new objects are created in the #created# method of vue components.
 
+### Departments ###
+
+This is a place for all the modules and your packages. You can name it *modules* or *packages* or anyhow you want.
