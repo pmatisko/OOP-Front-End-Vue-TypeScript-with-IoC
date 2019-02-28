@@ -62,11 +62,12 @@ You can create as many service providers as needed. For example for the public f
 
 There are 4 ways for registering a class
 
-1) *bind*
+1) *bind*<br>
 `
  public bind(className : string, classDefinition : object, dependecies : Array<string> = [])
 `
-example:
+
+example:<br>
 `
  this._app.container.bind('ExceptionHandler', ExceptionHandler, ['EventBus', 'ExceptionFactory', 'StatusMessageQueue']);
 `
@@ -76,11 +77,12 @@ The example code will assign *ExceptionHandler* to a new class of the type Excep
 After registering a class with the *bind* function, the *resolve* function always creates a new instance of the object.
 
 
-2) *bindClosure*
+2) *bindClosure*<br>
 `
  public bindClosure(className : string, closure : (app : Application) => object) : void
 `
-example:
+
+example:<br>
 `
   this._app.container.bindClosure('LanguageChangeObserver', function(app)  {
       let eventBus = app.container.resolve('EventBus');
@@ -91,11 +93,12 @@ example:
 Use the function *bindClosure* in case you need to create the object in any custom way. Instead of just calling *new YourClass(dependencies)*, the *resolve* function will call the closure. After registering a class with the *bindClosure* function, the *resolve* function always creates a new instance of the object.
 
 
-3) *singleton*
+3) *singleton*<br>
 `
  public singleton(className : string, classDefinition : object, dependecies : Array<string> = []) : void
 `
-example:
+
+example:<br>
 `
 this._app.container.singleton('AuthBroker', AuthBroker, ['BrokerCore']);
 `
@@ -103,11 +106,12 @@ this._app.container.singleton('AuthBroker', AuthBroker, ['BrokerCore']);
 The principle is the same as for the *bind* function. The only difference is, that after registering a singleton, the *resolve* function will always return the same instance of the object. The closure creating the object will be called only once.
 
 
-4) *singletonClosure*
+4) *singletonClosure*<br>
 `
 public singletonClosure(className : string, closure : (app : Application) => object) : void
 `
-example:
+
+example:<br>
 `
   this._app.container.singletonClosure('EventBus', function(app)  {
       return new Vue();
