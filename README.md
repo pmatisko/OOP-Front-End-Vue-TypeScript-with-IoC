@@ -71,7 +71,6 @@ example:<br>
  this._app.container.bind('ExceptionHandler', ExceptionHandler, ['EventBus', 'ExceptionFactory', 'StatusMessageQueue']);
 `<br>
 The example code will assign *ExceptionHandler* to a new class of the type ExceptionHandler. The array represents all the dependencies that the #ExceptionHandler# needs for its constructor. The order of the dependencies must follow the order of the constructor's arguments.<br>
-<br>
 After registering a class with the *bind* function, the *resolve* function always creates a new instance of the object.
 
 
