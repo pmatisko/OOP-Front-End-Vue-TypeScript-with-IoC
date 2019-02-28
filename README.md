@@ -70,8 +70,8 @@ example:<br>
 `
  this._app.container.bind('ExceptionHandler', ExceptionHandler, ['EventBus', 'ExceptionFactory', 'StatusMessageQueue']);
 `<br>
-The example code will assign *ExceptionHandler* to a new class of the type ExceptionHandler. The array represents all the dependencies that the #ExceptionHandler# needs for its constructor. The order of the dependencies must follow the order of the constructor's arguments.
-
+The example code will assign *ExceptionHandler* to a new class of the type ExceptionHandler. The array represents all the dependencies that the #ExceptionHandler# needs for its constructor. The order of the dependencies must follow the order of the constructor's arguments.<br>
+<br>
 After registering a class with the *bind* function, the *resolve* function always creates a new instance of the object.
 
 
@@ -109,8 +109,7 @@ example:<br>
   this._app.container.singletonClosure('EventBus', function(app)  {
       return new Vue();
   });
-`
-
+`<br>
 The principle is the same as for the *bindClosure* function. The only difference is, that after registering a singleton, the *resolve* function will always return the same instance of the object. The closure creating the object will be called only once.
 
 
