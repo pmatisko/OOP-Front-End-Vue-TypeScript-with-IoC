@@ -45,5 +45,85 @@ Main tasks for this file:
 5. Create Vue modules (Vue applications).
 
 
+### App core / Application.ts ###
 
+Application is a global object that stores the Laravel's csrf hash, language, the site link, container and some others features if needed.
+
+### App core / Container ###
+
+Container is the top layer of the IoC. It knows how to create classes and how to resolve dependencies. You can register objects on the container in 4 different ways. It will be described in more detail further in the Service provider section.
+
+If you need an instance of any class, you ask Container to create it for you.
+
+
+### App service provider / FrontAppServiceProvider.ts ###
+
+You can create as many service providers as needed. For example for the public front end, any kind of user admin section, etc. It will help you separate the app into indepdendent parts.
+
+There are 4 ways for registering a class
+
+1) *bind*
+`
+ public bind(className : string, classDefinition : object, dependecies : Array<string> = [])
+`
+example:
+`
+ this._app.container.bind('ExceptionHandler', ExceptionHandler, ['EventBus', 'ExceptionFactory', 'StatusMessageQueue']);
+`
+
+The example code will assign *ExceptionHandler* to a new class of the type ExceptionHandler. The array represents all the dependencies that the #ExceptionHandler# needs for its constructor. The order of the dependencies must follow the order of the constructor's arguments.
+
+After registering a class with the *bind* function, the *resolve* function always creates a new instance of the object.
+
+
+2) *bindClosure*
+`
+ public bindClosure(className : string, closure : (app : Application) => object) : void
+`
+example:
+`
+  this._app.container.bindClosure('LanguageChangeObserver', function(app)  {
+      let eventBus = app.container.resolve('EventBus');
+      return new LanguageChangeObserver(eventBus);
+  });
+`
+
+Use the function *bindClosure* in case you need to create the object in any custom way. Instead of just calling *new YourClass(dependencies)*, the *resolve* function will call the closure. After registering a class with the *bindClosure* function, the *resolve* function always creates a new instance of the object.
+
+
+3) *singleton*
+`
+ public singleton(className : string, classDefinition : object, dependecies : Array<string> = []) : void
+`
+example:
+`
+this._app.container.singleton('AuthBroker', AuthBroker, ['BrokerCore']);
+`
+
+The principle is the same as for the *bind* function. The only difference is, that after registering a singleton, the *resolve* function will always return the same instance of the object. The closure creating the object will be called only once.
+
+
+4) *singletonClosure*
+`
+public singletonClosure(className : string, closure : (app : Application) => object) : void
+`
+example:
+`
+  this._app.container.singletonClosure('EventBus', function(app)  {
+      return new Vue();
+  });
+`
+
+The principle is the same as for the *bindClosure* function. The only difference is, that after registering a singleton, the *resolve* function will always return the same instance of the object. The closure creating the object will be called only once.
+
+
+### Resolving registered classes ###
+
+In your JS/TS or Vue code, you can resolve objects using:
+
+`
+this.exceptionHandler = app.resolve('ExceptionHandler');
+`
+
+Typically, new objects are created in the #created# method of vue components.
 
