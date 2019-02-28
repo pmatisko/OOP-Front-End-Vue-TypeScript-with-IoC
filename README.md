@@ -65,8 +65,7 @@ There are 4 ways for registering a class
 1) *bind*<br>
 `
  public bind(className : string, classDefinition : object, dependecies : Array<string> = [])
-`
-
+`<br>
 example:<br>
 `
  this._app.container.bind('ExceptionHandler', ExceptionHandler, ['EventBus', 'ExceptionFactory', 'StatusMessageQueue']);
@@ -80,37 +79,32 @@ After registering a class with the *bind* function, the *resolve* function alway
 2) *bindClosure*<br>
 `
  public bindClosure(className : string, closure : (app : Application) => object) : void
-`
-
+`<br>
 example:<br>
 `
   this._app.container.bindClosure('LanguageChangeObserver', function(app)  {
       let eventBus = app.container.resolve('EventBus');
       return new LanguageChangeObserver(eventBus);
   });
-`
-
+`<br>
 Use the function *bindClosure* in case you need to create the object in any custom way. Instead of just calling *new YourClass(dependencies)*, the *resolve* function will call the closure. After registering a class with the *bindClosure* function, the *resolve* function always creates a new instance of the object.
 
 
 3) *singleton*<br>
 `
  public singleton(className : string, classDefinition : object, dependecies : Array<string> = []) : void
-`
-
+`<br>
 example:<br>
 `
 this._app.container.singleton('AuthBroker', AuthBroker, ['BrokerCore']);
-`
-
+`<br>
 The principle is the same as for the *bind* function. The only difference is, that after registering a singleton, the *resolve* function will always return the same instance of the object. The closure creating the object will be called only once.
 
 
 4) *singletonClosure*<br>
 `
 public singletonClosure(className : string, closure : (app : Application) => object) : void
-`
-
+`<br>
 example:<br>
 `
   this._app.container.singletonClosure('EventBus', function(app)  {
