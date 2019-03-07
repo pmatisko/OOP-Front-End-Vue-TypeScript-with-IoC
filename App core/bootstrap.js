@@ -1,7 +1,5 @@
 'use strict';
 
-window._ = import( /* webpackChunkName: "vendor" */  'lodash');
-
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
