@@ -11,7 +11,7 @@ let container = Container.getInstance();
 
 //create Application, put the  container into it
 import { Application } from './App core/Application';
-let app = window.app = Application.getInstance(container);
+let app = Application.getInstance(container);
 container.setAppPointer(app);
 
 

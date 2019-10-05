@@ -42,7 +42,6 @@ export class Container
     public registerWithClosure(className : string, closure : any, singleton = false) : void
     {
             this._classes.set(className, new BindClass({}, [], singleton, true, closure));
-
     }
 
 
