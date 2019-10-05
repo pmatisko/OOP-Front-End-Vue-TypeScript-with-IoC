@@ -1,0 +1,9 @@
+.colorPickerValue {
+    display: inline-block;
+    min-height: 30px;
+    width: 50px;
+    border: 1px solid #bbb;
+    @include border-radius(4px);
+
+    cursor: pointer;
+}

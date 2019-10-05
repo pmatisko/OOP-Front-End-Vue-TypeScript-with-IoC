@@ -6,7 +6,7 @@ export class ArrayFunctions
     /*
     *  nullAsEmpty - whether null value should be considered as missing in the array
     */
-    public static compareAssocArrays(array1 : IAssocAny, array2 : IAssocAny, properties : Array<string>, nullAsEmpty : boolean = false) : boolean
+    public compareAssocArrays(array1 : IAssocAny, array2 : IAssocAny, properties : Array<string>, nullAsEmpty : boolean = false) : boolean
     {
 
         array1 = JSON.parse(JSON.stringify(array1));   //vue type of objects converted to regular JS objects

@@ -1,0 +1,25 @@
+//Updates of some vue classes or additional classes for vuie components
+
+.buttonNoBorder {
+    border: none;
+    background: none;
+}
+
+@keyframes jump {
+    0%   {transform: translate3d(0,2px,0) scale3d(1,1,1);}
+    40%  {transform: translate3d(0,5px,0) scale3d(.9,1.1,1);}
+    100% {transform: translate3d(0,2px,0) scale3d(1.2,.9,1);}
+}
+.interactiveIcon {
+    cursor: pointer;
+
+    @include transition(0.4s);
+    &:hover {
+        @include transform(translateY(-3px));
+        @include transition(color 0.7s);
+        color: #999;
+
+        transform-origin: 50% 50%;
+        animation: jump .8s linear alternate infinite;
+    }
+}

@@ -1,0 +1,144 @@
+
+h1, h2, h3, h4 {
+    font-family: "Open Sans",sans-serif;
+    margin: 15px 0;
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+}
+
+h1{
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.12rem;
+    font-weight: 700;
+}
+
+h3  {
+    font-size: 1rem;
+}
+
+a {
+    color: $primaryColor;
+    text-decoration: none;
+    &:hover {
+        color: $primaryColorDarker;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    margin: auto;
+}
+
+.row {
+    width: 100%;
+    margin: 5px 0 5px 0;
+}
+
+.container .row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.tran02slinear {
+    transition: all 0.2s linear 0s;
+}
+
+.container {
+    margin-bottom: 30px;
+}
+
+.colRelative {
+    position: relative;
+}
+
+
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}
+
+.alignLeft {
+    text-align: left;
+}
+.alignRight {
+    text-align: right;
+}
+
+
+
+.center {
+    text-align: center;
+}
+
+.larger {
+    font-size: larger;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.smaller {
+    font-size: smaller;
+}
+
+.is-visible {
+    display: initial !important;
+}
+
+.visible {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.server-error-message {
+    border: 2px solid #790000;
+    padding: 5px 15px;
+    @include border-radius(10px);
+    background-color: rgba(100, 0, 0, 0.2);
+}
+
+
+.inputErrorMsg {
+    display: block;
+    padding: 4px 6px;
+    color: #a70000;
+}
+
+
+.inputErrBorder {
+    border: 2px solid #9b0000 !important;
+}
+
+
+.rotatedm90 {
+    display: block;
+    @include transform(rotate(-90deg));
+}
+
+.rotatedm40 {
+    display: block;
+    @include transform(rotate(-40deg));
+}
+
+.rotatedm75 {
+    display: block;
+    @include transform(rotate(-75deg));
+}
+
+.normal {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.closeBtn {
+    cursor: pointer;
+}

@@ -1,0 +1,67 @@
+@import './main colors';
+
+.colorPrimary {
+    color: $primaryColor;
+}
+.colorPrimaryDarker {
+    color: $primaryColorDarker;
+}
+
+.colorSecondary {
+    color: $secondaryColor;
+}
+.colorSecondaryDarker {
+    color: $secondaryColorDarker;
+}
+
+.colorTertiary {
+    color: $tertiaryColor;
+}
+.colorTertiaryDarker {
+    color: $tertiaryColorDarker;
+}
+
+.color_aa {
+    color: #aaaaaa;
+}
+
+.color_66 {
+    color: #666666;
+}
+
+.color_ff {
+    color: #ffffff;
+}
+
+.color_dd {
+    color: #dddddd;
+}
+
+.color_51 {
+    color: #515151;
+}
+
+.color_f9 {
+    color: #f9f7f4;
+}
+
+.color_ac {
+    color: #acacac;
+}
+
+.color_99 {
+    color: #999999;
+}
+
+
+.color_33 {
+    color: #333333;
+}
+
+.bg_primary {
+    background-color: $primaryColor;
+}
+
+.bg_72 {
+    background-color: $secondaryColor;
+}

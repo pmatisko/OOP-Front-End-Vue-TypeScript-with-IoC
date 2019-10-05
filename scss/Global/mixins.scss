@@ -1,0 +1,246 @@
+
+@mixin disp-size($media) {
+
+  @if $media == sizeXS {
+    @media only screen and (max-width: $mediaXS) { @content; }
+  }
+
+  @else if $media == sizeXS_S {
+    @media only screen and (min-width: $mediaXS + 1) and (max-width: $mediaS) { @content; }
+  }
+  @else if $media == sizeS_M {
+    @media only screen and (min-width: $mediaS + 1) and (max-width: $mediaM) { @content; }
+  }
+  @else if $media == sizeM_L {
+    @media only screen and (min-width: $mediaM + 1) and (max-width: $mediaL) { @content; }
+  }
+  @else if $media == sizeL_XL {
+    @media only screen and (min-width: $mediaL + 1) and (max-width: $mediaXL) { @content; }
+  }
+  @else if $media == sizeXL {
+    @media only screen and (min-width: $mediaXL) { @content; }
+  }
+  @else if $media == lessXL {
+    @media only screen and (max-width: $mediaXL) { @content; }
+  }
+  @else if $media == lessL {
+    @media only screen and (max-width: $mediaL) { @content; }
+  }
+  @else if $media == lessM {
+    @media only screen and (max-width: $mediaM) { @content; }
+  }
+
+  @else if $media == lessS {
+    @media only screen and (max-width: $mediaS) { @content; }
+  }
+
+  @else if $media == moreM {
+    @media only screen and (min-width: $mediaM) { @content; }
+  }
+  @else if $media == moreL {
+    @media only screen and (min-width: $mediaL) { @content; }
+  }
+  @else if $media == moreXS {
+    @media only screen and (min-width: $mediaXS) { @content; }
+  }
+}
+
+@mixin screen($res-min, $res-max) {
+    @media screen and ( min-width: $res-min ) and ( max-width: $res-max ) {
+        @content;
+    }
+}
+
+@mixin max-screen($res) {
+    @media screen and ( max-width: $res ) {
+        @content;
+    }
+}
+
+@mixin min-screen($res) {
+    @media screen and ( min-width: $res ) {
+        @content;
+    }
+}
+
+
+@function calculateRem($size) {
+  $remSize: $size / 14px;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property:    $property;
+  -o-transition-property:      $property;
+  -webkit-transition-property: $property;
+  transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property:    $duration;
+  -o-transition-property:      $duration;
+  -webkit-transition-property: $duration;
+  transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function:    $timing;
+  -o-transition-timing-function:      $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay:    $delay;
+  -o-transition-delay:      $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay:         $delay;
+}
+
+
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+
+@mixin spin($duration, $count : 1) {
+    -webkit-animation: spin $duration $count linear;
+    -moz-animation: spin $duration $count linear;
+    -o-animation: spin $duration $count linear;
+    animation: spin $duration $count linear;
+}
+
+
+@mixin clearfix {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin triangle($size, $color, $direction) {
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size / 2;
+
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == right {
+    border-left-color:   $color;
+
+  } @else if $direction == down {
+    border-top-color:    $color;
+
+  } @else if $direction == left {
+    border-right-color:  $color;
+  }
+}
+
+
+@mixin background-gradient($top, $bottom) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(to bottom,  $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, to left top, to left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(to bottom,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(to bottom,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(to bottom,  $top 0%,$bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+@mixin inline-block() {
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+}
+
+@mixin display-block() {
+    display: block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: block;
+}
+
+
+@mixin border-right-radius($right-radius) {
+    -moz-border-radius-topright: $right-radius;
+    -webkit-border-top-right-radius: $right-radius;
+    border-top-right-radius: $right-radius;
+    -moz-border-radius-bottomright: $right-radius;
+    -webkit-border-bottom-right-radius: $right-radius;
+    border-bottom-right-radius: $right-radius;
+}
+
+@mixin border-left-radius($left-radius) {
+    -moz-border-radius-topleft: $left-radius;
+    -webkit-border-top-left-radius: $left-radius;
+    border-top-left-radius: $left-radius;
+    -moz-border-radius-bottomleft: $left-radius;
+    -webkit-border-bottom-left-radius: $left-radius;
+    border-bottom-left-radius: $left-radius;
+}
+
+@mixin border-top-radius($top-radius) {
+    -moz-border-radius-topleft: $top-radius;
+    -webkit-border-top-left-radius: $top-radius;
+    border-top-left-radius: $top-radius;
+    -moz-border-radius-topright: $top-radius;
+    -webkit-border-top-right-radius: $top-radius;
+    border-top-right-radius: $top-radius;
+}
+
+@mixin border-bottom-radius($bottom-radius) {
+    -moz-border-radius-bottomleft: $bottom-radius;
+    -webkit-border-bottom-left-radius: $bottom-radius;
+    border-bottom-left-radius: $bottom-radius;
+    -moz-border-radius-bottomright: $bottom-radius;
+    -webkit-border-bottom-right-radius: $bottom-radius;
+    border-bottom-right-radius: $bottom-radius;
+}
+
+@mixin box-shadow($box-shadow) {
+    -moz-box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}

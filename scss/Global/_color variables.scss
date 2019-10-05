@@ -1,0 +1,127 @@
+$body-color: #f5f5f5;
+$font-color: #4b4d4e;
+$link-color: #6391c0;
+$border-color: #2f3348;
+$line-color: #e1e8ee;
+$card-color: #2e2b2e;
+$white-cards-color: #fafafa;
+$light-bg: #f1f4f6;
+
+// Fonts
+$font-family-montserrat: 	'Montserrat', sans-serif;
+
+$font-icon: 				'Font Awesome 5 Pro';
+
+$font-size-xsmall: 		10px;
+$font-size-small: 		12px;
+$font-size: 			14px;
+
+$link-color-hover: darken($link-color, 8%);
+
+$red: 					#E15858 !default;
+$purple: 				#AA55AA !default;
+$orange: 				#FFA117 !default;
+$yellow:				#ffd861 !default;
+$green: 				#5CB65F !default;
+$blue: 					#568AD3 !default;
+$blush: 				#e25985 !default;
+$pink: 					#f66d9b !default;
+$indigo:				#9367B4 !default;
+$azura:					#007FFF !default;
+$cyan: 					#17C2D7 !default;
+$info: 					#3C89DA !default;
+$white:					#FFFFFF !default;
+$dark:			 		#17191c !default;
+
+$new-purple:			#b8b8f3 !default;
+$new-blush:	    		#ce5374 !default;
+$new-indigo:			#613dc1 !default;
+$new-cyan:	    		#83e2db !default;
+$new-yellow:			#ffede1 !default;
+
+$gray-50: 				#f4f7f6 !default;
+$gray-100: 				#f7f7f7 !default;
+$gray-200: 				#e2e4e7 !default;
+$gray-300: 				#bbbec2 !default;
+$gray-400: 				#96989c !default;
+$gray-500: 				#77797c !default;
+$gray-600: 				#57595d !default;
+$gray-700: 				#393d42 !default;
+$gray-800: 				#212834 !default;
+$gray-900: 				#191f28 !default;
+
+// Bootstrap colors
+$color-primary: 		#00bcd2;
+$color-accent: 			#5c8ed4;
+$color-info: 			#3C89DA;
+$color-success: 		#22af46;
+$color-warning: 		#f3ad06;
+$color-danger: 			#de4848;
+$color-muted: 			#9A9A9A;
+$color-default-dark: 	#acb5c1;
+
+$sidebar-width: 		240px;
+$sidebar-color: 		#f8f8f8;
+
+$font-weight-300: 300   !default;
+$font-weight-400: 400   !default;
+$font-weight-500: 500   !default;
+$font-weight-600: 600   !default;
+$font-weight-700: 700   !default;
+
+$border-radius-extra-small:     0.125rem    !default;
+$border-radius-small:           0.1875rem   !default;
+$border-radius-large:           0.550rem     !default;
+$border-radius-extreme:         0.875rem    !default;
+
+// Breakpoints
+$break-xsmall: 			640px;
+$break-small: 			768px;
+$break-medium: 			992px;
+$break-1024: 			1024px;
+$break-large: 			1200px;
+$break-1280: 			1280px;
+$break-xlarge: 			1440px;
+$break-xxlarge: 		1600px;
+
+// custom colors
+$custom-colors: (
+        "white": 			#ffffff,
+        "dark": 			#17191c,
+        "blue": 			#568AD3,
+        "red": 				#E15858,
+        "pink": 			#f66d9b,
+        "cyan": 			#17C2D7,
+        "green": 			#5CB65F,
+        "orange": 			#FFA117,
+        "purple": 			#AB7DF6,
+        "yellow": 			#F3BB23,
+        "lightseagreen": 	#20B2AA
+);
+
+// Social media brand colors
+$social-colors : (
+    //amazon: #ff9900,
+    //disqus: #2e9fff,
+    //facebook: #3b5998,
+    //github: #333333,
+    //google: #4285f4,
+    //instagram: #3f729b,
+    //linkedin: #0077b5,
+    //mailchimp: #2c9ab7,
+    //paypal: #003087,
+    //pinterest: #bd081c,
+    //quora: #a82400,
+    //reddit: #ff4500,
+    //rss: #f26522,
+    //skype: #00aff0,
+    //slack: #6ecadc,
+    //slideshare: #0077b5,
+    //squarespace: #222222,
+    //stackoverflow: #fe7a15,
+    //twitter: #55acee,
+    //whatsapp: #43d854,
+    //yahoo: #410093,
+    //youtube: #cd201f
+);
+
