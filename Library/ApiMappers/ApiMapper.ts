@@ -1,3 +1,11 @@
+/*
+* Created by Peter Matisko
+* www.cyberma.net
+*
+* Licence: MIT
+*
+* */
+
 import {IAssocAny, IAssocType} from "../Types/Associative types";
 import {IModelFactory} from "../Models/contracts/IModelFactory";
 import {IModel} from "../Models/contracts/IModel";

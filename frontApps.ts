@@ -1,3 +1,11 @@
+/*
+* Created by Peter Matisko
+* www.cyberma.net
+*
+* Licence: MIT
+*
+* */
+
 
 //include Vue and global libraries
 import './App core/bootstrap.js';
